@@ -64,12 +64,12 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>external_sort</artifactId>
+      <artifactId>jboss-serialization</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>jboss-serialization</artifactId>
+      <artifactId>junit</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
