@@ -6,6 +6,17 @@
   },
   "relatedItems" : [ {
     "id" : "_ZoIq0O3hEeawiph590D2RA",
+    "version" : "0.1",
+    "type" : "test_case"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_W2YZYGoFEeqim8NPk7DFlg",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_ZoIq0O3hEeawiph590D2RA",
     "version" : "Latest",
     "type" : "context"
   }, {
@@ -153,7 +164,7 @@
   } ]
 }, {
   "baseItem" : {
-    "id" : "_JgyVcGn-EeqYfKl6-3Q6fA",
+    "id" : "_W2YZYGoFEeqim8NPk7DFlg",
     "version" : "0.1",
     "type" : "test_case"
   },
