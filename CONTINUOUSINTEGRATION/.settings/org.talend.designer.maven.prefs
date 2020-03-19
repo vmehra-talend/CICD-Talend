@@ -1,4 +1,4 @@
 PROJECT_GROUPID=org.example.continuousintegration
-PROJECT_VERSION=0.1.1
+PROJECT_VERSION=0.1.0
 PUBLISH_AS_SNAPSHOT=true
 eclipse.preferences.version=1
