@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.example.continuousintegration</groupId>
     <artifactId>code.Master</artifactId>
-    <version>7.1.1</version>
+    <version>0.1.1-SNAPSHOT</version>
     <relativePath>../../../</relativePath>
   </parent>
   <groupId>org.example.continuousintegration.job</groupId>
@@ -64,6 +64,11 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>external_sort</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>jboss-serialization</artifactId>
       <version>6.0.0</version>
     </dependency>
@@ -100,7 +105,7 @@
     <dependency>
       <groupId>org.example.continuousintegration.code</groupId>
       <artifactId>routines</artifactId>
-      <version>7.1.1</version>
+      <version>0.1.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>

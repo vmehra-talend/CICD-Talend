@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.example.continuousintegration</groupId>
     <artifactId>code.Master</artifactId>
-    <version>7.1.1</version>
+    <version>0.1.1-SNAPSHOT</version>
     <relativePath>../../</relativePath>
   </parent>
   <groupId>org.example.continuousintegration.code</groupId>
   <artifactId>routines</artifactId>
-  <version>7.1.1</version>
+  <version>0.1.1-SNAPSHOT</version>
   <name>CONTINUOUSINTEGRATION Routines</name>
   <properties>
     <talend.codes.package>routines</talend.codes.package>
