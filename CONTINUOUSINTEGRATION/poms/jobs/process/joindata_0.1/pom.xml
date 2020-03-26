@@ -64,11 +64,6 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>external_sort</artifactId>
-      <version>6.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.libraries</groupId>
       <artifactId>jboss-serialization</artifactId>
       <version>6.0.0</version>
     </dependency>
@@ -106,6 +101,12 @@
       <groupId>org.example.continuousintegration.code</groupId>
       <artifactId>routines</artifactId>
       <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.continuousintegration.joblet</groupId>
+      <artifactId>jobletSort</artifactId>
+      <version>0.1.0</version>
+      <type>pom</type>
     </dependency>
   </dependencies>
   <build>
