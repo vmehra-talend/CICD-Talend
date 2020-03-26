@@ -749,6 +749,11 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>talend-dataflow-spark2-lib-6.0.0-20160502</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>talend-mapred-lib</artifactId>
       <version>6.0.2.3</version>
     </dependency>
