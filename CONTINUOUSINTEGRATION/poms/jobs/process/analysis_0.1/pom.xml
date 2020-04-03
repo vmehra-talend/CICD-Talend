@@ -44,6 +44,11 @@
   <dependencies>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>accessors-smart-1.1</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>antlr-runtime-3.5.2</artifactId>
       <version>6.0.0</version>
     </dependency>
@@ -54,12 +59,12 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>json_simple-1.1</artifactId>
+      <artifactId>json-path-2.1.0</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>jsonpath</artifactId>
+      <artifactId>json-smart-2.2.1</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
@@ -70,6 +75,16 @@
     <dependency>
       <groupId>org.talend.libraries</groupId>
       <artifactId>org.talend.dataquality.parser</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>slf4j-api-1.7.5</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>slf4j-log4j12-1.7.5</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>

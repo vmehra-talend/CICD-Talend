@@ -121,13 +121,34 @@
     <elementParameter field="TABLE" name="MAPPING" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="country"/>
       <elementValue elementRef="QUERY" value="&quot;$.locations[*]&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="country_code"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="latest_count"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="history"/>
+      <elementValue elementRef="QUERY" value=""/>
     </elementParameter>
     <elementParameter field="TABLE" name="MAPPING_JSONPATH">
       <elementValue elementRef="SCHEMA_COLUMN" value="country"/>
       <elementValue elementRef="QUERY" value="&quot;country&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="country_code"/>
+      <elementValue elementRef="QUERY" value="&quot;country_code&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="latest_count"/>
+      <elementValue elementRef="QUERY" value="&quot;latest&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="history"/>
+      <elementValue elementRef="QUERY" value="&quot;history&quot;"/>
     </elementParameter>
     <elementParameter field="TABLE" name="MAPPINGXPATH" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="country"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="country_code"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="latest_count"/>
+      <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="history"/>
       <elementValue elementRef="QUERY" value=""/>
       <elementValue elementRef="NODECHECK" value="false"/>
     </elementParameter>
@@ -141,9 +162,15 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileInputJSON_1">
       <column comment="" key="false" length="-1" name="country" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="country_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="latest_count" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="history" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="-1" name="country" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="country_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="latest_count" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="history" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -153,6 +180,9 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tReplicate_2">
       <column comment="" key="false" length="-1" name="country" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="country_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="latest_count" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="history" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="512" posY="96">
@@ -171,12 +201,21 @@
     <elementParameter field="TABLE" name="LENGTHS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="country"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="country_code"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="latest_count"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="history"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_2">
       <column comment="" key="false" length="-1" name="country" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="country_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="latest_count" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="history" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tExtractJSONFields" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="192">
@@ -300,13 +339,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4a813779-80f7-4c37-b062-6dbe6c55df14"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0BF32571Hb851EvImVQijiVwd2byP5rEGgJsp12libZibgVrMADpIYZgxFeHlGbZjDLxyR4f8jQD
-9U5WYW3Vvw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d232fdac-eab2-42fe-bf0a-51d5dc759056"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GarmehIIOLxr9+ujzc5FZ3Di5KvcDg4eKfA151x5GPR2ouQLhXSxXYujnvfr3FTAhla+lKbNJUBL
-3IWCYZ0pXA==</DigestValue></Reference></SignedInfo><SignatureValue>heNxnzy16ngAHs2IvA2ZPtAf/ebo9pannGD3lPk9EPAnFu0Vg9W/vn/1H8RMSWXC5toDJb4+efk8
-38eFTC9NpHcSVPUQEQ/g1hEPPYuEYn4DvqNglWHyXfzZXl1bIOe8Wj5IEuH2PNGBt02jJWzWTlno
-gXkDcuvwXWZPv+22ZXwBMct+adlDRZ8PDEIolkfJqUbrIv4ZE0n5MLZqm0gyqg43kUOOZh/7jMG9
-WMpAF6Ner+A9nYQljwj+XLaUm0XpLFBLj4/Jhr4Ncwae7BrIcexgFb27UVM2eMUaEiSk9toQQ9Hn
-jtgl144W4pW9CAlixtNQo761B3QmVMx0RUtMNw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_beece7fa-8552-41c8-92bb-db1bf62cec97"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>E7O897RObs6Zlol2jmtY5xjwOg6/VH0ejYpTzpIgtb8KCE75HLye/K/0xGOjhp5/PyounDdYlfDp
+4arPBLpkZw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c3b49e31-3bf9-4369-8e49-17471db61d5b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Lh+xVxeboYC31spVEfZAx9/M17kc+VT7mSW8DDV1WNZrFsj9uyHDYSTq9+A+sHj3GxiVm8R1Fraa
+lfqbyzDiBQ==</DigestValue></Reference></SignedInfo><SignatureValue>0jQTyaN3XD5kG9kABbe8Vk0Ksn9b0AB43DomxCanKP3oJsJZj5JMaIhTLNzHacNGCEpulqf4s9Ga
+uyZLo0YSem2kTLa8+tqeFfpYRjTmA6HG2I1L0AwYxMUu6UCSNcPJsih8lUoslf4E+VIz5cZj/wpp
+8SWC+UHmN3q34zE7ZKPU0yqSJmt46A3tSy2pGVnvQRINP4jZG8OCnrjFi+Uxjq2SKzrORJSLpWf1
+125sQPf44HGlR+tUaC1iWbKW+hBVF+Bs4E0DevaVgnNX5I2uS8DfQ5Z2+52oXNRnzf/pvTTHMhqd
+poeWf+jthH/8KbAVihAIk4vxH2D9uYCzjtOqmw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -330,4 +369,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d232fdac-eab2-42fe-bf0a-51d5dc759056" Target="#_4a813779-80f7-4c37-b062-6dbe6c55df14"><Timestamp>2020-04-03 11:31:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c3b49e31-3bf9-4369-8e49-17471db61d5b" Target="#_beece7fa-8552-41c8-92bb-db1bf62cec97"><Timestamp>2020-04-03 11:33:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
