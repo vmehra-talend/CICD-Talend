@@ -254,16 +254,21 @@
       <column comment="" key="false" length="-1" name="country" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="country_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="latest_count" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="history" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="date" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="tot_cnt" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
-      <varTables name="Var" sizeState="INTERMEDIATE"/>
+      <varTables name="Var" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row3.history.replace(&quot;{&quot;, &quot;&quot;).replace(&quot;}&quot;, &quot;&quot;).replace(&quot;\\&quot;, &quot;&quot;).replace(&quot;\&quot;&quot;, &quot;&quot;) " name="var1" type="id_String"/>
+        <mapperTableEntries expression="Var.var1 .length() " name="length" type="id_Integer"/>
+      </varTables>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row3.country " name="country" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.country_code " name="country_code" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.latest_count " name="latest_count" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.history.replace(&quot;{&quot;, &quot;&quot;).replace(&quot;}&quot;, &quot;&quot;).replace(&quot;\\&quot;,&quot;&quot;).replace(&quot;\&quot;&quot;, &quot;&quot;) " name="history" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Var.var1.substring(0,Var.var1.indexOF(&quot;;&quot;)) " name="date" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="Var.var1.substring(Var.var1.indexOF(&quot;;&quot;)+1,) " name="tot_cnt" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
         <mapperTableEntries name="country" nullable="true" type="id_String"/>
@@ -293,7 +298,9 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="latest_count"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="history"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="date"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="tot_cnt"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
@@ -303,7 +310,8 @@
       <column comment="" key="false" length="-1" name="country" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="country_code" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="latest_count" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="history" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="date" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="tot_cnt" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputJSON_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputJSON_1" target="tReplicate_2">
@@ -334,6 +342,14 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="date"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="tot_cnt"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -342,13 +358,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f5011ada-7ac1-4ccf-b0b4-1440747e4988"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>snbHHttnxlNoAJl3b1xBGc7KjeORygEmNsBhvSou3UtbBgZuAiNUbNPRkPZkHiUHmu18ZkRa/fOK
-3EK9LoNlRw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8ea37deb-43f0-4c64-b530-85ed90dd6939"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DE+ITSbIrRtxurVcvQuXbmPnTMjqpLTGSoO2GI9c+HzRPYPo1dE2TcQPVHgFq7YjSywyJs8oip7R
-UcU1btomJw==</DigestValue></Reference></SignedInfo><SignatureValue>2K0MPWOKcSi5UTOWn+s27Oom2y4npIF+MjM0924usT/zWn0/xd37Ny5IL469aHnOWv8HFi1+BksC
-a8fLy8wCy3DPXAru0KbM9Egxe12A7O+KcS6qsc1KiVuwLrrjGaG5TOdMiIGWlwM/0wrwnfW1lt/0
-WYw88H0wgfyR2kaKANbtzTAxxWvud0NY9nSD/BAOPchPdBU3/pSOexZBxXs1JZRggZYZjxWyRTcG
-pYZyNRI13UTbrDgnyTH0xQZqMvUGsh8TxU5kK889WeR1UQYJUl3mib67wASlx2m4xid9Fp+bF1zp
-in/wvqHjEagI8m2CEmDTyMXH4lS8P/YyEHB60g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_cf879172-3a89-47ac-b75f-2f44ed11310e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jQSAgtQCH16TGWF2nZe6rHjcZ+HnjiUJe75FvGsBEbyJChjDUJg4rkUuDMc0Cy5tUg3Uvom4MBhs
+TMK2Lmcp7w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c52c4e6c-a8b0-4542-82aa-0b42b58758ed"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2Lte5KVgMmUeZ8/8GhgOsZi/d37539ssSwGTJYQUszP/0uaukHkkOdqTf8Pd5Dqjm6SIZkllr1Gx
+B0boFzSahQ==</DigestValue></Reference></SignedInfo><SignatureValue>Xaavk7HKSfMWRHozmBVPRBSEqExPtY77Bp3ufCpMhx0QAdt4cN0JxmvlXclgvDGV38U0UiV3QJN9
+l8BLvIW9NvX3ST1DyV9Equw4zpgn0X9+eAw5bgrUF0jkMQiUuenwQc9Ld6MOEeZMPK8+w9bZ+JLN
+MQsJGLTPdfp4NiUbiGTuKkCCahM3JfCUe/KliXNEHiL8eMdgAqQI2zScgTRUU+EKlt9CufHna3zb
+S6mV9Hqfn0gfyDMF/gCTW/yZaV0XcaaWrKuUprrMZp790KkrSVN05yo5UipZtDq1gbPzRicV3V+S
+gTe8lp8Z12pYRl76RcWDhOtdsX6oy4gFiOVbTg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -372,4 +388,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8ea37deb-43f0-4c64-b530-85ed90dd6939" Target="#_f5011ada-7ac1-4ccf-b0b4-1440747e4988"><Timestamp>2020-04-03 15:32:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c52c4e6c-a8b0-4542-82aa-0b42b58758ed" Target="#_cf879172-3a89-47ac-b75f-2f44ed11310e"><Timestamp>2020-04-03 17:03:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
