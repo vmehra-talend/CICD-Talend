@@ -236,12 +236,12 @@
       <column comment="" key="false" length="-1" name="history" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="192">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_bff_cHKeEeqtS_K7Yj-ETQ-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_bff_cHKeEeqtS_K7Yj-ETQ-tMap_2-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -260,12 +260,12 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row6.country " name="country" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.country_code " name="country_code" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.latest_count " name="latest_count" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.history.replace(&quot;{&quot;, &quot;&quot;) " name="history" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.country " name="country" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.country_code " name="country_code" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.latest_count " name="latest_count" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.history.replaceAll(&quot;{&quot;, &quot;&quot;) " name="history" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row6" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
         <mapperTableEntries name="country" nullable="true" type="id_String"/>
         <mapperTableEntries name="country_code" nullable="true" type="id_String"/>
         <mapperTableEntries name="latest_count" nullable="true" type="id_String"/>
@@ -329,11 +329,11 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
-  <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tNormalize_1" offsetLabelX="0" offsetLabelY="0" source="tNormalize_1" target="tMap_1">
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tNormalize_1" offsetLabelX="0" offsetLabelY="0" source="tNormalize_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row6"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -342,13 +342,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3706959f-1db8-4ae7-9fef-25819485f694"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>RoFf4lyBYlzliqLge8U3L2NyG3DLa99UljuNYvFjfZXIPGj057G6wSW+FNEHf+9VzU1J/3mEbLck
-ZCLrYiGu/Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_056ddef9-7986-4119-a690-5c973e95edf9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7WYT0GfabD3ihKahE/ejb/SesJXFKKDksLae4eRGg1Qvsh03rxo/leqCp/qBcBGLInfkIn8KCm3F
-rYkmjbsLfw==</DigestValue></Reference></SignedInfo><SignatureValue>hRKFq8+LYxNzSKMe/Ay2K2PmywxV/bgx3rbzxdBFyrF4wW2Fh/BnviM/6aZiYKnqpXc6R7md3MCT
-MVS/rzvlkh/dNuttbJDHTuwYETWuVEWFriXGoEb0Z3GiKbHxwu8Tleyiy3aui2ijf2WNuB7FGVFN
-rXRpiafocX1rjJ/HwrS51Ri+tjXrVhajtnf+FIRdmMurV8JgTBS5Dirwu+YC1JyCixkaqkkoIGxp
-mb7oRFf/Nhk1w5TRUWosuLSE4tI9v0+m/4xG2wcTxldBUoF1Xo/YN18AsayTdbwOP0KypzOVUW2+
-TWcuNwQkJOHKHeXVpuIN2wXqmE/iC7CtlqYchQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f21a5c38-d7be-41dd-ac51-5a6e49ad27da"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ekrjR6G9YrpdnENGqKdLyDZByXy97RLaRZTRqiEB1Bjr2LgqBc1lRHZVw4c2r4j23QNaaDje+43Q
+NLddheGG5Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1b1375c6-e3b0-4638-83cf-73770d17b311"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fAMnZVMnIoc3MA7rtAow9sGYyCGCleM6mUzpU4YeL5mXHqf6DKzmb6fNJIv4hAgBZn1Bn8srUccf
+4iWUE/LCYg==</DigestValue></Reference></SignedInfo><SignatureValue>GuFfcOdKbn24Q72ZzmZ5whcVBmbEx/0sWsvEVNYOdU9TJqPPyULNSUew1QTAdOj7YIfHh0bvdjwh
+NfUgas5Chb+GSdNtjtL5gcgjToQUQhdBDSUacrszFFFCc5Vu9Ll7gdiTjbVyueJqQ2c7jrnwoCiZ
+6pbGtZa7MyRRgMjhTybiuj00ID24i7Um3jOKa9/QrZWlHts2aC5Eu3b4RQ+cZ6Fi8LgyghXD6LzB
+6Gz+8z8jCt7axGLQXTJy93YGktEMtPZPSVMF78mGtl1UgXXcYBE5NPuXwjoM4oAPUwrMKdQcpA68
+06ntpl6012nGZtSiovcjWiOEyt+z9PhiM2HIxQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -372,4 +372,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_056ddef9-7986-4119-a690-5c973e95edf9" Target="#_3706959f-1db8-4ae7-9fef-25819485f694"><Timestamp>2020-04-03 12:05:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1b1375c6-e3b0-4638-83cf-73770d17b311" Target="#_f21a5c38-d7be-41dd-ac51-5a6e49ad27da"><Timestamp>2020-04-03 12:08:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
